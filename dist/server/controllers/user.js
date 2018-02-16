@@ -13,7 +13,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var jwt = require("jsonwebtoken");
 var user_1 = require("../models/user");
 var base_1 = require("./base");
-var UserCtrl = /** @class */ (function (_super) {
+var UserCtrl = (function (_super) {
     __extends(UserCtrl, _super);
     function UserCtrl() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
