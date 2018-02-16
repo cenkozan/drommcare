@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(morgan('dev'));
 
-if (process.env.NODE_ENV === 'test') {
+if (process.env.NODE_ENV === 'production') {
   mongoose.connect(process.env.MONGODB_TEST_URI, {useMongoClient: true});
 } else {
   mongoose.connect('mongodb://127.0.0.1:27017/new', {useMongoClient: true});
