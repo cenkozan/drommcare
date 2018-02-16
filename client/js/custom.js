@@ -16,26 +16,26 @@ $(function () {
     // This is for the top header part and sidebar part
     // ==============================================================  
     var set = function () {
-        var width = (window.innerWidth > 0) ? window.innerWidth : this.screen.width;
-        var topOffset = 70;
-        if (width < 1170) {
-            $("body").addClass("mini-sidebar");
-            $('.navbar-brand span').hide();
-            $(".sidebartoggler i").addClass("ti-menu");
-        }
-        else {
-            $("body").removeClass("mini-sidebar");
-            $('.navbar-brand span').show();
-            $(".sidebartoggler i").removeClass("ti-menu");
-        }
-
-        var height = ((window.innerHeight > 0) ? window.innerHeight : this.screen.height) - 1;
-        height = height - topOffset;
-        if (height < 1) height = 1;
-        if (height > topOffset) {
-            $(".page-wrapper").css("min-height", (height) + "px");
-        }
-
+            var width = (window.innerWidth > 0) ? window.innerWidth : this.screen.width;
+            var topOffset = 70;
+            if (width < 1170) {
+                $("body").addClass("mini-sidebar");
+                $('.navbar-brand span').hide();
+                $(".sidebartoggler i").addClass("ti-menu");
+            }
+            else {
+                $("body").removeClass("mini-sidebar");
+                $('.navbar-brand span').show();
+                $(".sidebartoggler i").removeClass("ti-menu");
+            }
+            
+            var height = ((window.innerHeight > 0) ? window.innerHeight : this.screen.height) - 1;
+            height = height - topOffset;
+            if (height < 1) height = 1;
+            if (height > topOffset) {
+                $(".page-wrapper").css("min-height", (height) + "px");
+            }
+       
     };
     $(window).ready(set);
     $(window).on("resize", set);
@@ -55,17 +55,19 @@ $(function () {
             $(".scroll-sidebar, .slimScrollDiv").css("overflow-x", "visible").parent().css("overflow", "visible");
             $("body").addClass("mini-sidebar");
             $('.navbar-brand span').hide();
-            $(".sidebartoggler i").removeClass("ti-menu");
+            $(".sidebartoggler i").removeClass("ti-menu"); 
         }
     });
     // topbar stickey on scroll
-
-    $(".fix-header .topbar").stick_in_parent({});
-
+    
+    $(".fix-header .topbar").stick_in_parent({
+        
+    });
+    
     $('.floating-labels .form-control').on('focus blur', function (e) {
         $(this).parents('.form-group').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
     }).trigger('blur');
-
+    
     // this is for close icon when navigation open in mobile view
     $(".nav-toggler").click(function () {
         $("body").toggleClass("show-sidebar");
@@ -74,7 +76,7 @@ $(function () {
     });
     $(".sidebartoggler").on('click', function () {
         //$(".sidebartoggler i").toggleClass("ti-menu");
-    });
+    }); 
     $(".search-box a, .search-box .app-search .srh-btn").on('click', function () {
         $(".app-search").toggle(200);
     });
@@ -84,7 +86,7 @@ $(function () {
     $(".right-side-toggle").click(function () {
         $(".right-sidebar").slideDown(50);
         $(".right-sidebar").toggleClass("shw-rside");
-
+        
     });
 
     // ============================================================== 
@@ -103,63 +105,63 @@ $(function () {
                 break;
             }
         }
-
+        
     });
     // ============================================================== 
     //tooltip
     // ============================================================== 
     $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
-    // ==============================================================
-    //Popover
-    // ==============================================================
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+        // ============================================================== 
+        //Popover
+        // ============================================================== 
     $(function () {
-        $('[data-toggle="popover"]').popover()
-    })
-    // ==============================================================
-    // Sidebarmenu
-    // ==============================================================
+            $('[data-toggle="popover"]').popover()
+        })
+        // ============================================================== 
+        // Sidebarmenu
+        // ============================================================== 
     $(function () {
         $('#sidebarnav').metisMenu();
     });
     // ============================================================== 
     // Slimscrollbars
     // ============================================================== 
-
+     
     $('.message-center').slimScroll({
         position: 'right'
         , size: "5px"
-
+        
         , color: '#dcdcdc'
-    });
-
-
+     });
+    
+    
     $('.aboutscroll').slimScroll({
         position: 'right'
         , size: "5px"
         , height: '80'
         , color: '#dcdcdc'
-    });
+     });
     $('.message-scroll').slimScroll({
         position: 'right'
         , size: "5px"
         , height: '570'
         , color: '#dcdcdc'
-    });
+     });
     $('.chat-box').slimScroll({
         position: 'right'
         , size: "5px"
         , height: '470'
         , color: '#dcdcdc'
-    });
-
+     });
+    
     $('.slimscrollright').slimScroll({
         height: '100%'
         , position: 'right'
         , size: "5px"
         , color: '#dcdcdc'
-    });
+     });
 
     // ============================================================== 
     // Resize all elements
@@ -171,7 +173,7 @@ $(function () {
     $(".list-task li label").click(function () {
         $(this).toggleClass("task-done");
     });
-
+    
     // ============================================================== 
     // Login and Recover Password 
     // ============================================================== 
@@ -183,85 +185,48 @@ $(function () {
     // ============================================================== 
     // Collapsable cards
     // ==============================================================
-    $('a[data-action="collapse"]').on('click', function (e) {
-        e.preventDefault();
-        $(this).closest('.card').find('[data-action="collapse"] i').toggleClass('ti-minus ti-plus');
-        $(this).closest('.card').children('.card-body').collapse('toggle');
+     $('a[data-action="collapse"]').on('click',function(e){
+            e.preventDefault();
+            $(this).closest('.card').find('[data-action="collapse"] i').toggleClass('ti-minus ti-plus');
+            $(this).closest('.card').children('.card-body').collapse('toggle');
+           
+        }); 
+        // Toggle fullscreen
+        $('a[data-action="expand"]').on('click',function(e){
+            e.preventDefault();
+            $(this).closest('.card').find('[data-action="expand"] i').toggleClass('mdi-arrow-expand mdi-arrow-compress');
+            $(this).closest('.card').toggleClass('card-fullscreen');
+        });
 
-    });
-    // Toggle fullscreen
-    $('a[data-action="expand"]').on('click', function (e) {
-        e.preventDefault();
-        $(this).closest('.card').find('[data-action="expand"] i').toggleClass('mdi-arrow-expand mdi-arrow-compress');
-        $(this).closest('.card').toggleClass('card-fullscreen');
-    });
-
-    // Close Card
-    $('a[data-action="close"]').on('click', function () {
-        $(this).closest('.card').removeClass().slideUp('fast');
-    });
-
+        // Close Card
+        $('a[data-action="close"]').on('click',function(){
+            $(this).closest('.card').removeClass().slideUp('fast');
+        });
+    
     // ============================================================== 
     // This is for the sparkline charts which is coming in the bradcrumb section
     // ==============================================================
     $('#monthchart').sparkline([5, 6, 2, 9, 4, 7, 10, 12], {
-        type: 'bar',
-        height: '35',
-        barWidth: '4',
-        resize: true,
-        barSpacing: '4',
-        barColor: '#1e88e5'
-    });
-    $('#lastmonthchart').sparkline([5, 6, 2, 9, 4, 7, 10, 12], {
-        type: 'bar',
-        height: '35',
-        barWidth: '4',
-        resize: true,
-        barSpacing: '4',
-        barColor: '#7460ee'
-    });
-    var sparkResize;
-
-
-    $(function () {
-        $('#select_link').click(function (e) {
-            e.preventDefault();
-            console.log('select_link clicked');
-
-            /*$.ajax({
-               dataType: 'jsonp',
-               data: "data=yeah",
-               jsonp: 'callback',
-               url: 'http://localhost:3000/endpoint?callback=?',
-               success: function(data) {
-                   console.log('success');
-                   console.log(JSON.stringify(data));
-               }
-           });*/
-            var data = {};
-            data.title = "";
-            data.message = "message";
-
-            $.ajax({
-                type: 'POST',
-                data: JSON.stringify(data),
-                contentType: 'application/json',
-                url: loginEndpoint,
-                success: function (data) {
-                    window.location = '/dashboard.html';
-                    console.log('success');
-                    console.log(JSON.stringify(data));
-                }
-            });
-            /*$.ajax('http://localhost:3000/endpoint', {
-                    type: 'POST',
-                    data: JSON.stringify(data),
-                    contentType: 'application/json',
-                    success: function() { console.log('success');},
-                    error  : function() { console.log('error');}
-            });*/
+            type: 'bar',
+            height: '35',
+            barWidth: '4',
+            resize: true,
+            barSpacing: '4',
+            barColor: '#1e88e5'
         });
-    });
-
-
+    $('#lastmonthchart').sparkline([5, 6, 2, 9, 4, 7, 10, 12], {
+            type: 'bar',
+            height: '35',
+            barWidth: '4',
+            resize: true,
+            barSpacing: '4',
+            barColor: '#7460ee'
+        });
+    var sparkResize;
+ 
+        
+    $(window).resize(function() {
+        var navHeight = $('.left-sidebar:first').height();
+        $('.page-wrapper:first').css({'padding-top': navHeight + 'px'});
+    })
 });

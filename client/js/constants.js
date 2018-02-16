@@ -1,1 +1,0 @@
-var loginEndpoint = 'http://localhost:3000/api/login';

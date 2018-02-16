@@ -16,10 +16,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan('dev'));
 if (process.env.NODE_ENV === 'test') {
-    mongoose.connect(process.env.MONGODB_TEST_URI);
+    mongoose.connect(process.env.MONGODB_TEST_URI, { useMongoClient: true });
 }
 else {
-    mongoose.connect(process.env.MONGODB_URI);
+    mongoose.connect('mongodb://127.0.0.1:27017/new', { useMongoClient: true });
 }
 var db = mongoose.connection;
 mongoose.Promise = global.Promise;
@@ -28,9 +28,6 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
     console.log('Connected to MongoDB');
     routes_1.default(app);
-    app.get('/*', function (req, res) {
-        res.sendFile(path.join(__dirname, '../public/index.html'));
-    });
     if (!module.parent) {
         app.listen(app.get('port'), function () {
             console.log('Angular Full Stack listening on port ' + app.get('port'));

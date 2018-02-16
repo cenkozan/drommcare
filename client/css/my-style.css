@@ -1,0 +1,149 @@
+.sidebar-nav > ul > li.active > a,
+.sidebar-nav > ul > li.active > a > i {
+  color: #ffffff !important;
+  background: #26c6da !important;
+}
+
+.table td, .table th {
+	vertical-align: middle;
+}
+
+.left-sidebar {
+	padding-top: 10px;
+}
+
+body {
+	color: inherit;
+}
+
+.topbar {
+	background: none;
+	box-shadow: none;
+}
+
+.topbar .navbar-light .navbar-nav .nav-item > a.nav-link {
+	color: #26c6da !important;
+}
+
+.topbar .navbar-light .navbar-nav .nav-item > a.nav-link:hover {
+	color: #009efb !important;
+}
+
+.page-wrapper {
+	padding-top: 65px;
+}
+
+.footable-first-column {
+	width: 1% !important;
+}
+
+.left-sidebar {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+.topbar .navbar-light .navbar-nav .nav-item > a.nav-link:hover,
+.topbar .navbar-light .navbar-nav .nav-item > a.nav-link:focus {
+	color: #009efb !important;
+}
+
+.topbar {
+	height: 59px;
+}
+
+.navbar-header .navbar-brand {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.topbar .top-navbar {
+	min-height: 59px;
+}
+
+.nav-link {
+	padding: 0 13px !important;
+}
+
+.nav-tabs .nav-link {
+	padding-top: 13px !important;
+	padding-bottom: 13px !important;
+}
+
+.sidebar-nav ul li a i {
+	display: inline;
+}
+
+@media (max-width: 767px) {
+	.mini-sidebar .left-sidebar {
+    /*position: fixed;
+    display: block;
+    height: auto;
+    overflow: auto;*/
+  }
+}
+
+.sidebar-nav {
+	padding-top: 0 !important;
+}
+
+.navbar-brand {
+	margin-right: 0 !important;
+}
+
+.topbar .top-navbar {
+	padding: 0 !important;
+}
+
+.sidebar-main {
+	margin-right: 102px !important;
+}
+
+.topbar {
+	position: absolute;
+	right: 0;
+}
+
+.mini-sidebar .footer {
+	left: 0 !important;
+}
+
+
+.gender-select label {
+	background-color: white !important;
+	color: black !important;
+}
+
+.gender-select label.active {
+	background-color: #028ee1 !important;
+	color: white !important;
+}
+
+.navbar-nav .dropdown-menu,
+.navbar-nav .dropdown-menu-right {
+  position: absolute !important;
+  right: 0 !important;
+  left: auto !important;
+}
+
+.topbar .top-navbar .mailbox {
+	width: 300px !important;
+}
+
+.topbar .top-navbar .navbar-nav > .nav-item.show .dropdown-menu {
+	width: auto !important;
+}
+
+
+.navbar-header {
+	width: auto !important;
+}
+
+.sidebar-nav > ul > li {
+	padding: 2px 0 !important;
+}
+
+.hours-worked-col {
+	width: 1%;
+	white-space: nowrap;
+}
+
