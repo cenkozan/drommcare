@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var BaseCtrl = (function () {
+var BaseCtrl = /** @class */ (function () {
     function BaseCtrl() {
         var _this = this;
         // Get all

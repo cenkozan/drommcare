@@ -12,7 +12,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var cat_1 = require("../models/cat");
 var base_1 = require("./base");
-var CatCtrl = (function (_super) {
+var CatCtrl = /** @class */ (function (_super) {
     __extends(CatCtrl, _super);
     function CatCtrl() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
