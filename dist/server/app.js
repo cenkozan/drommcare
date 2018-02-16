@@ -15,12 +15,7 @@ app.use('/', express.static(path.join(__dirname, '../public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan('dev'));
-if (process.env.NODE_ENV === 'test') {
-    mongoose.connect(process.env.MONGODB_TEST_URI, { useMongoClient: true });
-}
-else {
-    mongoose.connect('mongodb://127.0.0.1:27017/new', { useMongoClient: true });
-}
+mongoose.connect('mongodb://heroku_ng5zl3t5:vqfqatl36mgc90tn7tsoubv52m@ds245337.mlab.com:45337/heroku_ng5zl3t5');
 var db = mongoose.connection;
 mongoose.Promise = global.Promise;
 mongoose.connection.on('error', function (err) { });

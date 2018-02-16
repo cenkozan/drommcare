@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(morgan('dev'));
 
-mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true});
+mongoose.connect('mongodb://heroku_ng5zl3t5:vqfqatl36mgc90tn7tsoubv52m@ds245337.mlab.com:45337/heroku_ng5zl3t5');
 
 
 const db = mongoose.connection;
