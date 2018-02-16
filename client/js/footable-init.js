@@ -8,7 +8,7 @@ $(window).on('load', function() {
 	// Accordion
 	// -----------------------------------------------------------------
 	$('#demo-foo-accordion').footable().on('footable_row_expanded', function(e) {
-		$('#demo-foo-accordion tbody tr.footable-detail-show footable-toggle').not(e.row).each(function() {
+		$('#demo-foo-accordion tbody tr.footable-detail-show').not(e.row).each(function() {
 			$('#demo-foo-accordion').data('footable').toggleDetail(this);
 		});
 	});
@@ -66,7 +66,7 @@ $(window).on('load', function() {
 		//delete the row
 		footable.removeRow(row);
 	});
-  var addrow = $('#demo-foo-addrow2');
+    var addrow = $('#demo-foo-addrow2');
 	addrow.footable().on('click', '.delete-row-btn', function() {
 
 		//get the footable object
@@ -90,26 +90,4 @@ $(window).on('load', function() {
 		//add it
 		footable.appendRow(newRow);
 	});
-
-
-	
-
-
-	// Pagination
-	// -----------------------------------------------------------------
-	// $('#demo-foo-addrow2').footable();
-	$('#demo-show-entries').change(function (e) {
-		e.preventDefault();
-		var pageSize = $(this).val();
-		$('#demo-foo-addrow2').data('page-size', pageSize);
-		$('#demo-foo-addrow2').trigger('footable_initialized');
-	});
-
-	
-
-	// Search input
-	// $('#demo-input-search2').on('input', function (e) {
-	// 	e.preventDefault();
-	// 	addrow.trigger('footable_filter', {filter: $(this).val()});
-	// });
 });

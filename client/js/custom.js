@@ -225,8 +225,5 @@ $(function () {
     var sparkResize;
  
         
-    $(window).resize(function() {
-        var navHeight = $('.left-sidebar:first').height();
-        $('.page-wrapper:first').css({'padding-top': navHeight + 'px'});
-    })
+    
 });
